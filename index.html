@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny Partington | Data Science Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    
+
+
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-image: url("background.jpg"); /* <-- put background.jpg next to index.html */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .experience-logo-container {
+            width: 100%;
+            height: 120px;               /* controls header height */
+            background-color: #0a0a0a;   /* optional, makes logos stand out */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-bottom: 1px solid #222;
+        }
+
+        .experience-logo {
+            max-width: 100%;
+            max-height: 100%;            /* scale to fit inside header */
+            object-fit: contain;
+        }
+
+
+        .page-overlay {
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            z-index: 9999;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff007f !important;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+
+        #home {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #dcdcdc;
+        }
+
+        .hero-badge {
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        .about-section img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff007f;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        section-title span {
+            color: #ffffff;  
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        .section-subtitle a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .section-subtitle a:hover {
+            text-decoration: underline;
+        }
+
+
+        .project-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-card .card-body {
+            background-color: #111;
+            color: #f1f1f1;
+        }
+
+        .project-card .card-title {
+            font-weight: 600;
+        }
+
+        #skills {
+            background-color: transparent; 
+            color: #ffffff;
+        }
+
+
+        .skill-card {
+            background: rgba(0, 0, 0, 0.7);
+
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .skill-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        #contact {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .social-icons a {
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .social-icons img.social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ff007f;
+            padding: 10px;
+            transition: transform 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        .social-icons img.social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icons p {
+            margin-top: 10px;
+            color: #ff007f;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: #aaaaaa;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-overlay">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Danny Partington</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HOME -->
+        <section id="home">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h1 class="hero-title">Danny Partington — Data Science & Analytics</h1>
+
+                        <p class="hero-subtitle">
+                            Data-focused professional with experience in banking and consulting.
+                            <br><br>
+                            <strong>First Class Honours</strong> – Computer Science and Mathematics, University of Leeds<br>
+                            <strong>3 A* & 1 A at A-levels</strong> –  Mathematics(<strong>A*</strong>), Physics(<strong>A*</strong>), Biology(<strong>A*</strong>), Chemistry(<strong>A</strong>) (Received Highest Achiever Awards in my College)<br>
+                            <strong>Professional Certifications:</strong> Integrated Business Planning(IBP) SAP · Design Thinking · Codecademy Data Science - Data Analytics Specialist
+                        </p>
+
+                        <div class="mb-3">
+                            <span class="badge badge-pill badge-light hero-badge">Data Science</span>
+                            <span class="badge badge-pill badge-light hero-badge">Python</span>
+                            <span class="badge badge-pill badge-light hero-badge">SQL</span>
+                            <span class="badge badge-pill badge-light hero-badge">Analytics</span>
+                            <span class="badge badge-pill badge-light hero-badge">Tableau</span>
+                            <span class="badge badge-pill badge-light hero-badge">Power BI</span>
+                        </div>
+
+                        <a href="#projects" class="btn btn-primary btn-lg mr-2">View Projects</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Get in Touch</a>
+                    </div>
+
+
+                      
+                   
+
+                    <div class="col-md-5 text-center mt-4 mt-md-0">
+                        <!-- put me.png in the same folder or change the filename -->
+                       <img src="me.png" alt="Danny portrait" class="img-fluid rounded-circle"
+                            style="width: 250px; height: 250px; object-fit: cover; object-position: center; transform: scale(0.90); border: 4px solid #ff007f;">
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title"><span>About</span> Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center about-section">
+                    <p class="about-text">
+                        Seven years working with data — 3 years while gaining a First-Class Honours Degree in Computer Science & Mathematics, 
+                        and then 4 years whilst in roles in banking, consulting and freelance Data Science. 
+                    </p>
+                    
+                    <p class="about-text">
+                         Outside of data I also tutor maths at GCSE and A-Level, something I love doing but also something which has honed 
+                         my ability to simplify complex ideas and communicate them clearly. I love my sports, and play football and tennis as much as I can.
+                    </p>
+
+                    <p class="about-text">
+                        I’ve always recognised and appreciated the power of data.
+                        Even as a young Bolton Wanderers fan suffering a period of Manchester United dominance, it gave me great pleasure reporting back anything I could find to
+                        highlight their shortcomings (A task United have made much easier now and even highlighted in my EPL xG project below). This helped me realise the power of data
+                        and it's importance in argument forming. It's this same analytical mindset that still shapes me now with my work and in life 
+                    </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title"><span>Professional</span> Experience</h2>
+
+                <div class="row">
+
+                    <!-- Lloyds Banking Group -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card" style="min-height: 100%;">
+                            
+                            <!-- Header logo -->
+                            <div class="experience-logo-container">
+                                <img src="images/projects/lloyds.png" class="experience-logo" alt="Lloyds Banking Group logo">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Lloyds Banking Group – Student Finance Risk Optimisation</h5>
+                                <p class="card-text">
+                                    Major contributions to an overhaul of Lloyds' student overdraft application process through 
+                                    advanced data analysis and risk modelling. Identified key behavioural and financial indicators 
+                                    linked to high-risk outcomes, collaborating with credit-modelling and product teams to embed 
+                                    these insights into a redesigned decisioning framework.
+                                    <br><br>
+                                    The initiative improved customer fairness, reduced unnecessary application declines, and 
+                                    strengthened protection for vulnerable students by preventing avoidable debt exposure.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capgemini -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card" style="min-height: 100%;">
+
+                            <!-- Header logo -->
+                            <div class="experience-logo-container">
+                                <img src="images/projects/capgemini.png" class="experience-logo" alt="Capgemini logo">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Capgemini – SAP IBP Analytics & Data Migration (Welsh Water)</h5>
+                                <p class="card-text">
+                                    Achieved SAP Integrated Business Planning (IBP) certification as part of a specialist internal 
+                                    cohort, developing strong capability in demand forecasting, planning analytics, 
+                                    inventory optimisation and scenario modelling.
+                                    <br><br>
+                                    Delivered a series of demonstrations to show how SAP IBP can enhance operational 
+                                    planning accuracy and cross-functional visibility within large enterprises.
+                                    <br><br>
+                                    Served as data migration lead for Welsh Water’s S/4HANA implementation — collecting, cleansing, 
+                                    transforming and validating operational datasets to ensure accurate and seamless integration 
+                                    into the new planning architecture.
+                                    <br><br>
+                                    Alongside my data work, I led a graduate community of over 300 members, coordinating weekly communications
+                                    to share internal updates, opportunities and emerging technologies. I also planned and delivered regular social
+                                    initiatives, including successfully organising and executing the first in-person graduate meetup post-pandemic.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>   
+
+
+        
+
+
+<!-- PROFESSIONAL CERTIFICATIONS -->
+<section id="certifications">
+    <div class="container">
+        <h2 class="section-title"><span>Professional</span> Certifications</h2>
+
+        <div class="row text-center">
+
+            <!-- SAP IBP -->
+            <div class="col-md-4 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/certifications/IBP.png"
+                         alt="SAP IBP Certification"
+                         style="height: 120px; max-width: 95%; margin-bottom: 20px; object-fit: contain;">
+                    <h5 class="skill-title">SAP Integrated Business Planning (IBP)</h5>
+                    <p class="skill-description">
+                        Certified in SAP IBP, with experience using enterprise-scale data models, forecasting analytics
+                        and scenario analysis to support data-driven decision-making.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Codecademy Data Science -->
+            <div class="col-md-4 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/certifications/Codecademy.png"
+                         alt="Data Science Certification"
+                         style="height: 120px; max-width: 95%; margin-bottom: 20px; object-fit: contain;">
+                    <h5 class="skill-title">Codecademy – Data Science Professional</h5>
+                    <p class="skill-description">
+                        Completed a professional programme covering Python, SQL, statistics, data cleaning,
+                        exploratory analysis and applied machine learning workflows.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SAP Design Thinking -->
+            <div class="col-md-4 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/certifications/DesignThinking.png"
+                         alt="SAP Design Thinking Certification"
+                         style="height: 120px; max-width: 95%; margin-bottom: 20px; object-fit: contain;">
+                    <h5 class="skill-title">SAP – Design Thinking Certification</h5>
+                    <p class="skill-description">
+                        Certified in Design Thinking methodologies, applying structured problem definition,
+                        hypothesis framing and user-driven insight to ensure data analysis addresses the right
+                        business questions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- PERSONAL PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Sample Projects</h2>
+                <p class="section-subtitle">
+                    A sample of my work across data science and analytics.
+                    For a more in depth look across all of my projects, check out my
+                    <a href="https://github.com/DannyPartington" target="_blank">GitHub</a>.
+                </p>
+
+                <div class="row">
+                    <!-- Project 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <img src="images//projects/football.png" class="card-img-top" alt="EPL xG project image">
+                            <div class="card-body">
+                                <h5 class="card-title">Premier League 23/24 xG Analysis (Dash App)</h5>
+                                <p class="card-text">
+                                    Project analysing expected goals (xG) for the 23/24 EPL season. After cleaning and engineering features in Python,
+                                    I evaluated xG’s accuracy and reliability through exploratory analysis. The results revealed that xG may not only be useful for interpreting
+                                    individual matches, but also shows potential properties for predicting future form. Results are presented in a deployed Dash
+                                    application with a range of interactive league and team views. Entire Journey guided through Jupyer Notebooks on my Github
+                                </p>
+                                <a href="https://github.com/DannyPartington/EPL-xG-Analysis-" target="_blank" class="btn btn-primary btn-sm">
+                                    View on GitHub
+                                </a>
+                                <a href="https://epl23-24-xg-analysis-app.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm ml-2">
+                                    Live App
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    Project 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <img src="images//projects/dashboard.png" class="card-img-top" alt="Analytics project image">
+                            <div class="card-body">
+                                <h5 class="card-title">Banking Analytics Dashboard</h5>
+                                <p class="card-text">
+                                    Created an interactive Streamlit platform for rapid backtesting of RSI trading strategies, enabling users
+                                    to adjust parameters in real time and compare performance across markets. I then aggreagated the backtest
+                                    outputs and performed detailed analysis in Power BI, uncovering the KPIs and patterns that reliably separated
+                                    high-performing strategies from those that under-performed. The project delivered actionable insights into which
+                                    RSI configurations produced the strongest and most consistent results.
+                                </p>
+                                <a href="https://github.com/DannyPartington/Financial-Investment-Analysis-" target="_blank" class="btn btn-primary btn-sm">
+                                    View on GitHub
+                                </a>
+                                <a href="https://rsistrattester.streamlit.app/" target="_blank" class="btn btn-outline-light btn-sm ml-2">
+                                    Live App
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4: Tracsis timetable optimisation -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <img src="images/projects/train_maps.png" class="card-img-top" alt="Rail timetable optimisation project image">
+                            <div class="card-body">
+                                <h5 class="card-title">Rail Timetable Optimisation (Tracsis)</h5>
+                                <p class="card-text">
+                                    Industry project with the railway company Tracsis - evaluating rail timetables and exploring methods for
+                                    peak optimisation. Ran simulations of timetable scenarios and
+                                    analysed the results in Excel and Python to understand capacity, delays, and performance.
+                                </p>
+                                <a href="https://github.com/DannyPartington/Tracsis-Railway-Timetables-Optimisation-Analysis-" target="_blank" class="btn btn-primary btn-sm">
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- SKILLS -->
+        
+        <section id="skills">
+        <div class="container">
+        <h2 class="section-title"><span>Skills</span></h2>
+        <div class="row text-center">
+
+            <!-- Skill 1: SQL -->
+            <div class="col-md-2 offset-md-1 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/skills/SQL.png" alt="SQL" class="skill-icon img-fluid">
+                    <h5 class="skill-title">SQL</h5>
+                    <p class="skill-description">
+                        Joins, CTEs, window functions, aggregations, and query optimisation for analytics.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 2: Python -->
+            <div class="col-md-2 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/skills/Python.png" alt="Python" class="skill-icon img-fluid">
+                    <h5 class="skill-title">Python</h5>
+                    <p class="skill-description">
+                        pandas, NumPy, data cleaning, exploratory analysis, and building Dash apps.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 3: Excel -->
+            <div class="col-md-2 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/skills/Excel.png" alt="Excel" class="skill-icon img-fluid">
+                    <h5 class="skill-title">Excel</h5>
+                    <p class="skill-description">
+                        Advanced formulas, pivot tables, and dashboarding for quick business insights.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 4: Power BI -->
+            <div class="col-md-2 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/skills/Powerbi.png" alt="Power BI" class="skill-icon img-fluid">
+                    <h5 class="skill-title">Power BI</h5>
+                    <p class="skill-description">
+                        Data modelling, DAX, and interactive dashboards for clear, stakeholder-ready reporting.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skill 5: Tableau -->
+            <div class="col-md-2 mb-4">
+                <div class="skill-card p-4">
+                    <img src="images/skills/Tableau.png" alt="Tableau" class="skill-icon img-fluid">
+                    <h5 class="skill-title">Tableau</h5>
+                    <p class="skill-description">
+                        Visual analytics, calculated fields, and storytelling dashboards for decision-makers.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container text-center">
+                <h2 class="section-title"><span>Contact</span> Me</h2>
+
+                <p class="mb-3">
+                    If you’d like to talk about data roles, projects, or freelance work, feel free to reach out.
+                </p>
+
+                <!-- Email + phone -->
+                <p class="mb-2">
+                    <a href="mailto:d_partington@hotmail.com" style="color: #fff; text-decoration: none;">
+                        <i class="fas fa-envelope"></i> d_partington@hotmail.com
+                    </a>
+                </p>
+
+                <p class="mb-4">
+                    <a href="https://wa.me/447564444937" style="color: #fff; text-decoration: none;" target="_blank">
+                        <img src="images/contact/whatsapp.png" 
+                            alt="WhatsApp" 
+                            style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
+                        +44 7564 444937
+                    </a>
+                </p>
+
+
+                <!-- Social icons -->
+                <div class="social-icons mt-4">
+                    <div class="row justify-content-center">
+                        <!-- LinkedIn -->
+                        <div class="col-4 col-sm-2 mb-3">
+                            <a href="https://www.linkedin.com/in/daniel-partington-1202a2192/" target="_blank" class="d-block">
+                                <img src="contacts/linkedin.png" alt="LinkedIn" class="social-icon">
+                                <p>LinkedIn</p>
+                            </a>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="col-4 col-sm-2 mb-3">
+                            <a href="https://github.com/DannyPartington" target="_blank" class="d-block">
+                                <img src="contacts/github.png" alt="GitHub" class="social-icon">
+                                <p>GitHub</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-text">
+                    © <span id="year"></span> Danny Partington. Built with HTML, Bootstrap, and a lot of coffee.
+                </p>
+            </div>
+        </section>
+
