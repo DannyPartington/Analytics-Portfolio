@@ -13,6 +13,9 @@
 ### Professional Experience:
   Decision System Analyst @ Lloyds Banking Group, Data Migration Technology Consultant @ Capgemini, Data Scientist @ Freelance
 
+### Professional Certifications
+Data Science Specialist @ CodeCademy, Integrated Business Planning @ SAP, Design Thinking @ SAP 
+  
 
 ### Website link: 
 
